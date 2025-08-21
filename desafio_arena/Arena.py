@@ -37,7 +37,7 @@ class Arena:
                         print(resultado)
                 else:
                     # Ataque normal
-                    if esquiva_valor > ataque_valor:
+                    if esquiva_valor > 18:
                         print(f"{defensor.especie} se esquivou do ataque!")
                     else:
                         dano = atacante.atacar(defensor)
@@ -70,7 +70,7 @@ class Arena:
                         print(resultado)
                 else:
                     # Ataque normal
-                    if esquiva_valor > ataque_valor:
+                    if esquiva_valor > 18:
                         print(f"{atacante.especie} se esquivou do ataque!")
                     else:
                         dano = defensor.atacar(atacante)

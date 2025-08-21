@@ -73,8 +73,8 @@ class Criatura:
 
     def usar_habilidade(self, habilidade, outra_criatura=None):
         if habilidade == 'cura':
-            self.vida += 20
-            return f"{self.especie} usou Cura e recuperou 20 de vida!"
+            self.vida += 10
+            return f"{self.especie} usou Cura e recuperou 10 de vida!"
         elif habilidade == 'Sopro de fogo' and outra_criatura is not None:
             dano = self.calcular_dano_habilidade(habilidade, outra_criatura)
             outra_criatura.vida -= max(dano, 0)
