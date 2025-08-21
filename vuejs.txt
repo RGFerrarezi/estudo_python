@@ -1,0 +1,32 @@
+<script setup>
+import { ref } from 'vue'
+
+const msg = ref('')
+const aten = ref('Saída!')
+const contador = ref(1)
+const link = ref('https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwj28ejOsJyPAxUIkZUCHW4kEkcQPAgI&zx=1755795683613&no_sw_cr=1')
+const link2 = ref('https://www.youtube.com/')
+const nome = ref('GOOGLE')
+const nome2 = ref('YouTube')
+
+function acresentar(){
+  contador.value++
+}
+function decrescer(){
+  contador.value--
+}
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <p>{{ aten }}</p>
+  <div><button @click="acresentar">Acresentar: {{contador}}</button></div><br/>
+  <div><button @click="decrescer">Decrescer: {{contador}}</button></div>
+  <br/>
+  <a :href="contador > 10 ? link : contador > 5 ? link2 : link3">{{contador > 10 ? nome : contador>5 ? link2 : link3}}</a>
+  <br/>
+
+  <p>{{contador%17 == 0 ? 'Kastarys é bom!' : contador > 10 ? nome : nome2}}</p>
+
+  <input v-model="msg" />
+</template>
