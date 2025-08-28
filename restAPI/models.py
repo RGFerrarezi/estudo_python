@@ -12,7 +12,7 @@ class User(SQLModel, table=True):
 class UserCreate(SQLModel):
     name: constr(min_length=1) # garantindo que o nome não seja vazio
     email: EmailStr # garantindo que o email seja válido
-    age: conint(ge=0) # garantindo que a idade esteja entre 1 e 119
+    age: conint(gt=0, lt=120) # garantindo que a idade esteja entre 1 e 119
 
 #Modelo para saída de dados:
 class UserRead(SQLModel):
