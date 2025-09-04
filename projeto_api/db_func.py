@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from sqlmodel import Session, select
 from models import User, UserCreate, UserRead, engine
+from fastapi.responses import RedirectResponse
 
 router = APIRouter()
 
@@ -42,3 +43,8 @@ def delete_user(user_id: int):
         session.delete(db_user)
         session.commit()
         return {"ok": True}
+
+        #redirecionando para a página inicial
+@router.get("/home")
+def redirect_to_index():
+    return RedirectResponse(url="/index.html")
